@@ -2,8 +2,8 @@
 
 namespace Facebook\WebDriver\Remote\Html5;
 
-use Facebook\WebDriver\Html5\LocalStorage;
-use Facebook\WebDriver\Html5\SessionStorage;
+use Facebook\WebDriver\Html5\LocalStorageInterface;
+use Facebook\WebDriver\Html5\SessionStorageInterface;
 use Facebook\WebDriver\Remote\RemoteExecuteMethod;
 use PHPUnit\Framework\TestCase;
 
@@ -12,10 +12,10 @@ use PHPUnit\Framework\TestCase;
  */
 class RemoteWebStorageTest extends TestCase
 {
-    /** @var RemoteExecuteMethod|\PHPUnit_Framework_MockObject_MockObject */
+    /** @var RemoteExecuteMethod|\PHPUnit\Framework\MockObject\MockObject */
     private $executor;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->executor = $this->getMockBuilder(RemoteExecuteMethod::class)
             ->disableOriginalConstructor()
@@ -28,7 +28,7 @@ class RemoteWebStorageTest extends TestCase
 
         $local = $storage->getLocalStorage();
         $this->assertInstanceOf(RemoteLocalStorage::class, $local);
-        $this->assertInstanceOf(LocalStorage::class, $local);
+        $this->assertInstanceOf(LocalStorageInterface::class, $local);
     }
 
     public function testShouldReturnSessionStorage()
@@ -37,6 +37,6 @@ class RemoteWebStorageTest extends TestCase
 
         $session = $storage->getSessionStorage();
         $this->assertInstanceOf(RemoteSessionStorage::class, $session);
-        $this->assertInstanceOf(SessionStorage::class, $session);
+        $this->assertInstanceOf(SessionStorageInterface::class, $session);
     }
 }

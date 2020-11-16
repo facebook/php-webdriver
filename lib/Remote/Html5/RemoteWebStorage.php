@@ -2,13 +2,13 @@
 
 namespace Facebook\WebDriver\Remote\Html5;
 
-use Facebook\WebDriver\Html5\WebStorage;
+use Facebook\WebDriver\Html5\WebStorageInterface;
 use Facebook\WebDriver\Remote\RemoteExecuteMethod;
 
 /**
  * Provides remote access to the WebStorage API.
  */
-class RemoteWebStorage implements WebStorage
+class RemoteWebStorage implements WebStorageInterface
 {
     /**
      * @var RemoteExecuteMethod

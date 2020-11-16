@@ -2,9 +2,6 @@
 
 namespace Facebook\WebDriver;
 
-use Facebook\WebDriver\Html5\WebStorage;
-use Facebook\WebDriver\Interactions\Touch\WebDriverTouchScreen;
-
 /**
  * The interface for WebDriver.
  */

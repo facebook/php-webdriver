@@ -11,10 +11,10 @@ use PHPUnit\Framework\TestCase;
  */
 class RemoteSessionStorageTest extends TestCase
 {
-    /** @var RemoteExecuteMethod|\PHPUnit_Framework_MockObject_MockObject */
+    /** @var RemoteExecuteMethod|\PHPUnit\Framework\MockObject\MockObject */
     private $executor;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->executor = $this->getMockBuilder(RemoteExecuteMethod::class)
             ->disableOriginalConstructor()

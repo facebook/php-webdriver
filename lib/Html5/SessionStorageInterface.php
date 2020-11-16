@@ -5,7 +5,7 @@ namespace Facebook\WebDriver\Html5;
 /**
  * Represents the session storage for the site currently opened in the browser.
  */
-interface SessionStorage
+interface SessionStorageInterface
 {
     /**
      * Remove all of the items from the storage.
@@ -32,8 +32,6 @@ interface SessionStorage
      * Remove a single item from the storage.
      *
      * @param string $key
-     *
-     * @return string
      */
     public function removeItem($key);
 
@@ -42,8 +40,6 @@ interface SessionStorage
      *
      * @param string $key
      * @param string $value
-     *
-     * @return string
      */
     public function setItem($key, $value);
 

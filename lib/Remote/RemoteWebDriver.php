@@ -3,7 +3,7 @@
 namespace Facebook\WebDriver\Remote;
 
 use Facebook\WebDriver\Exception\UnsupportedOperationException;
-use Facebook\WebDriver\Html5\WebStorage;
+use Facebook\WebDriver\Html5\WebStorageInterface;
 use Facebook\WebDriver\Interactions\WebDriverActions;
 use Facebook\WebDriver\JavaScriptExecutor;
 use Facebook\WebDriver\Remote\Html5\RemoteWebStorage;
@@ -476,7 +476,7 @@ class RemoteWebDriver implements WebDriver, JavaScriptExecutor, WebDriverHasInpu
     /**
      * An abstraction allowing the driver to access the browser's storage.
      *
-     * @return WebStorage
+     * @return WebStorageInterface
      */
     public function storage()
     {

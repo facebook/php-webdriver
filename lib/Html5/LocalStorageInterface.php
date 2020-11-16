@@ -5,7 +5,7 @@ namespace Facebook\WebDriver\Html5;
 /**
  * Represents the local storage for the site currently opened in the browser.
  */
-interface LocalStorage
+interface LocalStorageInterface
 {
     /**
      * Remove all of the items from the storage.
@@ -40,8 +40,6 @@ interface LocalStorage
      *
      * @param string $key
      * @param string $value
-     *
-     * @return string
      */
     public function setItem($key, $value);
 
