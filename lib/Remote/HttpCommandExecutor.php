@@ -18,6 +18,11 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
         'Accept: application/json',
     ];
 
+    /** @internal */
+    const SESSION_STORAGE = '/session/:sessionId/session_storage';
+    /** @internal */
+    const LOCAL_STORAGE = '/session/:sessionId/session_storage';
+
     /**
      * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#command-reference
      */
@@ -25,8 +30,6 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
         DriverCommand::ACCEPT_ALERT => ['method' => 'POST', 'url' => '/session/:sessionId/accept_alert'],
         DriverCommand::ADD_COOKIE => ['method' => 'POST', 'url' => '/session/:sessionId/cookie'],
         DriverCommand::CLEAR_ELEMENT => ['method' => 'POST', 'url' => '/session/:sessionId/element/:id/clear'],
-        DriverCommand::CLEAR_LOCAL_STORAGE => ['method' => 'DELETE', 'url' => '/session/:sessionId/local_storage'],
-        DriverCommand::CLEAR_SESSION_STORAGE => ['method' => 'DELETE', 'url' => '/session/:sessionId/session_storage'],
         DriverCommand::CLICK_ELEMENT => ['method' => 'POST', 'url' => '/session/:sessionId/element/:id/click'],
         DriverCommand::CLOSE => ['method' => 'DELETE', 'url' => '/session/:sessionId/window'],
         DriverCommand::DELETE_ALL_COOKIES => ['method' => 'DELETE', 'url' => '/session/:sessionId/cookie'],
@@ -70,25 +73,10 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
         DriverCommand::GET_ELEMENT_SIZE => ['method' => 'GET', 'url' => '/session/:sessionId/element/:id/size'],
         DriverCommand::GET_ELEMENT_TAG_NAME => ['method' => 'GET',  'url' => '/session/:sessionId/element/:id/name'],
         DriverCommand::GET_ELEMENT_TEXT => ['method' => 'GET', 'url' => '/session/:sessionId/element/:id/text'],
-        DriverCommand::GET_LOCAL_STORAGE_ITEM => [
-            'method' => 'GET',
-            'url' => '/session/:sessionId/local_storage/key/:key',
-        ],
-        DriverCommand::GET_LOCAL_STORAGE_KEYS => ['method' => 'GET', 'url' => '/session/:sessionId/local_storage'],
-        DriverCommand::GET_LOCAL_STORAGE_SIZE => ['method' => 'GET', 'url' => '/session/:sessionId/local_storage/size'],
         DriverCommand::GET_LOG => ['method' => 'POST', 'url' => '/session/:sessionId/log'],
         DriverCommand::GET_PAGE_SOURCE => ['method' => 'GET', 'url' => '/session/:sessionId/source'],
         DriverCommand::GET_SCREEN_ORIENTATION => ['method' => 'GET', 'url' => '/session/:sessionId/orientation'],
         DriverCommand::GET_CAPABILITIES => ['method' => 'GET', 'url' => '/session/:sessionId'],
-        DriverCommand::GET_SESSION_STORAGE_ITEM => [
-            'method' => 'GET',
-            'url' => '/session/:sessionId/session_storage/key/:key',
-        ],
-        DriverCommand::GET_SESSION_STORAGE_KEYS => ['method' => 'GET', 'url' => '/session/:sessionId/session_storage'],
-        DriverCommand::GET_SESSION_STORAGE_SIZE => [
-            'method' => 'GET',
-            'url' => '/session/:sessionId/session_storage/size',
-        ],
         DriverCommand::GET_TITLE => ['method' => 'GET', 'url' => '/session/:sessionId/title'],
         DriverCommand::GET_WINDOW_HANDLES => ['method' => 'GET', 'url' => '/session/:sessionId/window_handles'],
         DriverCommand::GET_WINDOW_POSITION => [
@@ -116,14 +104,6 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
         DriverCommand::NEW_SESSION => ['method' => 'POST', 'url' => '/session'],
         DriverCommand::QUIT => ['method' => 'DELETE', 'url' => '/session/:sessionId'],
         DriverCommand::REFRESH => ['method' => 'POST', 'url' => '/session/:sessionId/refresh'],
-        DriverCommand::REMOVE_LOCAL_STORAGE_ITEM => [
-            'method' => 'DELETE',
-            'url' => '/session/:sessionId/local_storage/key/:key',
-        ],
-        DriverCommand::REMOVE_SESSION_STORAGE_ITEM => [
-            'method' => 'DELETE',
-            'url' => '/session/:sessionId/session_storage/key/:key',
-        ],
         DriverCommand::UPLOAD_FILE => ['method' => 'POST', 'url' => '/session/:sessionId/file'], // undocumented
         DriverCommand::SEND_KEYS_TO_ACTIVE_ELEMENT => ['method' => 'POST', 'url' => '/session/:sessionId/keys'],
         DriverCommand::SET_ALERT_VALUE => ['method' => 'POST', 'url' => '/session/:sessionId/alert_text'],
@@ -147,8 +127,6 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
             'method' => 'GET',
             'url' => '/session/:sessionId/element/:id/screenshot',
         ],
-        DriverCommand::SET_LOCAL_STORAGE_ITEM => ['method' => 'POST', 'url' => '/session/:sessionId/local_storage'],
-        DriverCommand::SET_SESSION_STORAGE_ITEM => ['method' => 'POST', 'url' => '/session/:sessionId/session_storage'],
         DriverCommand::TOUCH_SINGLE_TAP => ['method' => 'POST', 'url' => '/session/:sessionId/touch/click'],
         DriverCommand::TOUCH_DOWN => ['method' => 'POST', 'url' => '/session/:sessionId/touch/down'],
         DriverCommand::TOUCH_DOUBLE_TAP => ['method' => 'POST', 'url' => '/session/:sessionId/touch/doubleclick'],
@@ -157,7 +135,25 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
         DriverCommand::TOUCH_MOVE => ['method' => 'POST', 'url' => '/session/:sessionId/touch/move'],
         DriverCommand::TOUCH_SCROLL => ['method' => 'POST', 'url' => '/session/:sessionId/touch/scroll'],
         DriverCommand::TOUCH_UP => ['method' => 'POST', 'url' => '/session/:sessionId/touch/up'],
+
         DriverCommand::CUSTOM_COMMAND => [],
+
+        // Commands which are not part of W3C specification, but remote ends usually implements them
+        DriverCommand::CLEAR_LOCAL_STORAGE => ['method' => 'DELETE', 'url' => self::LOCAL_STORAGE],
+        DriverCommand::CLEAR_SESSION_STORAGE => ['method' => 'DELETE', 'url' => self::SESSION_STORAGE],
+        DriverCommand::GET_LOCAL_STORAGE_ITEM => ['method' => 'GET', 'url' => self::LOCAL_STORAGE . '/key/:key'],
+        DriverCommand::GET_LOCAL_STORAGE_KEYS => ['method' => 'GET', 'url' => self::LOCAL_STORAGE],
+        DriverCommand::GET_LOCAL_STORAGE_SIZE => ['method' => 'GET', 'url' => self::LOCAL_STORAGE . '/size'],
+        DriverCommand::GET_SESSION_STORAGE_ITEM => ['method' => 'GET', 'url' => self::SESSION_STORAGE . '/key/:key'],
+        DriverCommand::GET_SESSION_STORAGE_KEYS => ['method' => 'GET', 'url' => self::SESSION_STORAGE],
+        DriverCommand::GET_SESSION_STORAGE_SIZE => ['method' => 'GET', 'url' => self::SESSION_STORAGE . '/size'],
+        DriverCommand::REMOVE_LOCAL_STORAGE_ITEM => ['method' => 'DELETE', 'url' => self::LOCAL_STORAGE . '/key/:key'],
+        DriverCommand::REMOVE_SESSION_STORAGE_ITEM => [
+            'method' => 'DELETE',
+            'url' => self::SESSION_STORAGE . '/key/:key',
+        ],
+        DriverCommand::SET_LOCAL_STORAGE_ITEM => ['method' => 'POST', 'url' => self::LOCAL_STORAGE],
+        DriverCommand::SET_SESSION_STORAGE_ITEM => ['method' => 'POST', 'url' => self::SESSION_STORAGE],
     ];
     /**
      * @var array Will be merged with $commands
