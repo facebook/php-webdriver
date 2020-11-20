@@ -2,6 +2,8 @@
 This project versioning adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
+### Added
+- Support for local storage and session storage via the new `RemoteWebDriver::storage()` method.
 
 ## 1.9.0 - 2020-11-19
 ### Added
