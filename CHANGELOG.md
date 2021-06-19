@@ -2,6 +2,7 @@
 This project versioning adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
+- Add `all` and `any` expected conditions
 
 ## 1.11.1 - 2021-05-21
 ### Fixed
