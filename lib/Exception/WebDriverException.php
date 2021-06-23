@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 use Exception;
 
@@ -220,3 +220,5 @@ class WebDriverException extends Exception
         }
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\WebDriverException::class, \Facebook\WebDriver\Exception\WebDriverException::class);

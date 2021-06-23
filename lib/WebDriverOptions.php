@@ -1,10 +1,10 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
-use Facebook\WebDriver\Exception\NoSuchCookieException;
-use Facebook\WebDriver\Remote\DriverCommand;
-use Facebook\WebDriver\Remote\ExecuteMethod;
+use PhpWebDriver\WebDriver\Exception\NoSuchCookieException;
+use PhpWebDriver\WebDriver\Remote\DriverCommand;
+use PhpWebDriver\WebDriver\Remote\ExecuteMethod;
 use InvalidArgumentException;
 
 /**
@@ -178,3 +178,5 @@ class WebDriverOptions
         return $this->executor->execute(DriverCommand::GET_AVAILABLE_LOG_TYPES);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverOptions::class, \Facebook\WebDriver\WebDriverOptions::class);

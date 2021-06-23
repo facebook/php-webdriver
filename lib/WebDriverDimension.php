@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * Represent a dimension.
@@ -57,3 +57,5 @@ class WebDriverDimension
         return $this->height === $dimension->getHeight() && $this->width === $dimension->getWidth();
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverDimension::class, \Facebook\WebDriver\WebDriverDimension::class);

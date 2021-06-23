@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 /**
  * Represents status of remote end
@@ -78,3 +78,5 @@ class RemoteStatus
         $this->meta = $meta;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\RemoteStatus::class, \Facebook\WebDriver\Remote\RemoteStatus::class);

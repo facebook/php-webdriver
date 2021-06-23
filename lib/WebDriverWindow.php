@@ -1,11 +1,11 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
-use Facebook\WebDriver\Exception\IndexOutOfBoundsException;
-use Facebook\WebDriver\Exception\UnsupportedOperationException;
-use Facebook\WebDriver\Remote\DriverCommand;
-use Facebook\WebDriver\Remote\ExecuteMethod;
+use PhpWebDriver\WebDriver\Exception\IndexOutOfBoundsException;
+use PhpWebDriver\WebDriver\Exception\UnsupportedOperationException;
+use PhpWebDriver\WebDriver\Remote\DriverCommand;
+use PhpWebDriver\WebDriver\Remote\ExecuteMethod;
 
 /**
  * An abstraction allowing the driver to manipulate the browser's window
@@ -189,3 +189,5 @@ class WebDriverWindow
         return $this;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverWindow::class, \Facebook\WebDriver\WebDriverWindow::class);

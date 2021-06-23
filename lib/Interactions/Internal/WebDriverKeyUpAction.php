@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Internal;
+namespace PhpWebDriver\WebDriver\Interactions\Internal;
 
 class WebDriverKeyUpAction extends WebDriverSingleKeyAction
 {
@@ -10,3 +10,5 @@ class WebDriverKeyUpAction extends WebDriverSingleKeyAction
         $this->keyboard->releaseKey($this->key);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Internal\WebDriverKeyUpAction::class, \Facebook\WebDriver\Interactions\Internal\WebDriverKeyUpAction::class);

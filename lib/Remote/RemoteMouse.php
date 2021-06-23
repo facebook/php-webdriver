@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
-use Facebook\WebDriver\Interactions\Internal\WebDriverCoordinates;
-use Facebook\WebDriver\WebDriverMouse;
+use PhpWebDriver\WebDriver\Interactions\Internal\WebDriverCoordinates;
+use PhpWebDriver\WebDriver\WebDriverMouse;
 
 /**
  * Execute mouse commands for RemoteWebDriver.
@@ -304,3 +304,5 @@ class RemoteMouse implements WebDriverMouse
         ];
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\RemoteMouse::class, \Facebook\WebDriver\Remote\RemoteMouse::class);

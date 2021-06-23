@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 class WebDriverCommand
 {
@@ -48,3 +48,5 @@ class WebDriverCommand
         return $this->parameters;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\WebDriverCommand::class, \Facebook\WebDriver\Remote\WebDriverCommand::class);

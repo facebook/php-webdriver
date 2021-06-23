@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Firefox;
+namespace PhpWebDriver\WebDriver\Firefox;
 
 /**
  * Constants of common Firefox profile preferences (about:config values).
@@ -23,3 +23,5 @@ class FirefoxPreferences
     {
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Firefox\FirefoxPreferences::class, \Facebook\WebDriver\Firefox\FirefoxPreferences::class);

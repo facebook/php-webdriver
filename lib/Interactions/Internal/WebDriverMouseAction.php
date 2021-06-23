@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Internal;
+namespace PhpWebDriver\WebDriver\Interactions\Internal;
 
-use Facebook\WebDriver\Internal\WebDriverLocatable;
-use Facebook\WebDriver\WebDriverMouse;
+use PhpWebDriver\WebDriver\Internal\WebDriverLocatable;
+use PhpWebDriver\WebDriver\WebDriverMouse;
 
 /**
  * Base class for all mouse-related actions.
@@ -46,3 +46,5 @@ class WebDriverMouseAction
         $this->mouse->mouseMove($this->locationProvider);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Internal\WebDriverMouseAction::class, \Facebook\WebDriver\Interactions\Internal\WebDriverMouseAction::class);

@@ -1,10 +1,10 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Internal;
+namespace PhpWebDriver\WebDriver\Interactions\Internal;
 
-use Facebook\WebDriver\Internal\WebDriverLocatable;
-use Facebook\WebDriver\WebDriverAction;
-use Facebook\WebDriver\WebDriverMouse;
+use PhpWebDriver\WebDriver\Internal\WebDriverLocatable;
+use PhpWebDriver\WebDriver\WebDriverAction;
+use PhpWebDriver\WebDriver\WebDriverMouse;
 
 class WebDriverMoveToOffsetAction extends WebDriverMouseAction implements WebDriverAction
 {
@@ -43,3 +43,5 @@ class WebDriverMoveToOffsetAction extends WebDriverMouseAction implements WebDri
         );
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Internal\WebDriverMoveToOffsetAction::class, \Facebook\WebDriver\Interactions\Internal\WebDriverMoveToOffsetAction::class);

@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Touch;
+namespace PhpWebDriver\WebDriver\Interactions\Touch;
 
-use Facebook\WebDriver\WebDriverElement;
+use PhpWebDriver\WebDriver\WebDriverElement;
 
 /**
  * Interface representing touch screen operations.
@@ -112,3 +112,5 @@ interface WebDriverTouchScreen
      */
     public function up($x, $y);
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Touch\WebDriverTouchScreen::class, \Facebook\WebDriver\Interactions\Touch\WebDriverTouchScreen::class);

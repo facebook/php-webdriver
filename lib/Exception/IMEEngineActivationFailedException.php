@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 /**
  * @deprecated Removed in W3C WebDriver, see https://github.com/php-webdriver/php-webdriver/pull/686
@@ -8,3 +8,5 @@ namespace Facebook\WebDriver\Exception;
 class IMEEngineActivationFailedException extends WebDriverException
 {
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\IMEEngineActivationFailedException::class, \Facebook\WebDriver\Exception\IMEEngineActivationFailedException::class);

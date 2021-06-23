@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * The basic 8 mechanisms supported by webdriver to locate a web element.
@@ -132,3 +132,5 @@ class WebDriverBy
         return new static('xpath', $xpath);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverBy::class, \Facebook\WebDriver\WebDriverBy::class);

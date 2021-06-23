@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Chrome;
+namespace PhpWebDriver\WebDriver\Chrome;
 
-use Facebook\WebDriver\Remote\Service\DriverService;
+use PhpWebDriver\WebDriver\Remote\Service\DriverService;
 
 class ChromeDriverService extends DriverService
 {
@@ -35,3 +35,5 @@ class ChromeDriverService extends DriverService
         return new static($pathToExecutable, $port, $args);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Chrome\ChromeDriverService::class, \Facebook\WebDriver\Chrome\ChromeDriverService::class);

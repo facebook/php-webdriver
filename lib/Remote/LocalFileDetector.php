@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 class LocalFileDetector implements FileDetector
 {
@@ -18,3 +18,5 @@ class LocalFileDetector implements FileDetector
         return null;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\LocalFileDetector::class, \Facebook\WebDriver\Remote\LocalFileDetector::class);

@@ -1,10 +1,10 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Internal;
+namespace PhpWebDriver\WebDriver\Interactions\Internal;
 
-use Facebook\WebDriver\Internal\WebDriverLocatable;
-use Facebook\WebDriver\WebDriverKeyboard;
-use Facebook\WebDriver\WebDriverMouse;
+use PhpWebDriver\WebDriver\Internal\WebDriverLocatable;
+use PhpWebDriver\WebDriver\WebDriverKeyboard;
+use PhpWebDriver\WebDriver\WebDriverMouse;
 
 /**
  * Base class for all keyboard-related actions.
@@ -46,3 +46,5 @@ abstract class WebDriverKeysRelatedAction
         }
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Internal\WebDriverKeysRelatedAction::class, \Facebook\WebDriver\Interactions\Internal\WebDriverKeysRelatedAction::class);

@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Touch;
+namespace PhpWebDriver\WebDriver\Interactions\Touch;
 
-use Facebook\WebDriver\Interactions\Internal\WebDriverCoordinates;
-use Facebook\WebDriver\Internal\WebDriverLocatable;
+use PhpWebDriver\WebDriver\Interactions\Internal\WebDriverCoordinates;
+use PhpWebDriver\WebDriver\Internal\WebDriverLocatable;
 
 /**
  * Base class for all touch-related actions.
@@ -40,3 +40,5 @@ abstract class WebDriverTouchAction
             ? $this->locationProvider->getCoordinates() : null;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Touch\WebDriverTouchAction::class, \Facebook\WebDriver\Interactions\Touch\WebDriverTouchAction::class);

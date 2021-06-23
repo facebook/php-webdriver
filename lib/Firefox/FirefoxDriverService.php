@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Firefox;
+namespace PhpWebDriver\WebDriver\Firefox;
 
-use Facebook\WebDriver\Remote\Service\DriverService;
+use PhpWebDriver\WebDriver\Remote\Service\DriverService;
 
 class FirefoxDriverService extends DriverService
 {
@@ -32,3 +32,5 @@ class FirefoxDriverService extends DriverService
         return new static($pathToExecutable, $port, $args);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Firefox\FirefoxDriverService::class, \Facebook\WebDriver\Firefox\FirefoxDriverService::class);

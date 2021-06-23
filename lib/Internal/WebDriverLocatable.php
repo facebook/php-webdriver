@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Internal;
+namespace PhpWebDriver\WebDriver\Internal;
 
-use Facebook\WebDriver\Interactions\Internal\WebDriverCoordinates;
+use PhpWebDriver\WebDriver\Interactions\Internal\WebDriverCoordinates;
 
 /**
  * Interface representing basic mouse operations.
@@ -14,3 +14,5 @@ interface WebDriverLocatable
      */
     public function getCoordinates();
 }
+
+class_alias(\PhpWebDriver\WebDriver\Internal\WebDriverLocatable::class, \Facebook\WebDriver\Internal\WebDriverLocatable::class);

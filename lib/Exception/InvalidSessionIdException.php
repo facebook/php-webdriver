@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 /**
  * Occurs if the given session id is not in the list of active sessions, meaning the session either does not exist
@@ -9,3 +9,5 @@ namespace Facebook\WebDriver\Exception;
 class InvalidSessionIdException extends WebDriverException
 {
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\InvalidSessionIdException::class, \Facebook\WebDriver\Exception\InvalidSessionIdException::class);

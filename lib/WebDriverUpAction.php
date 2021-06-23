@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
-use Facebook\WebDriver\Interactions\Touch\WebDriverTouchAction;
-use Facebook\WebDriver\Interactions\Touch\WebDriverTouchScreen;
+use PhpWebDriver\WebDriver\Interactions\Touch\WebDriverTouchAction;
+use PhpWebDriver\WebDriver\Interactions\Touch\WebDriverTouchScreen;
 
 class WebDriverUpAction extends WebDriverTouchAction implements WebDriverAction
 {
@@ -27,3 +27,5 @@ class WebDriverUpAction extends WebDriverTouchAction implements WebDriverAction
         $this->touchScreen->up($this->x, $this->y);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverUpAction::class, \Facebook\WebDriver\WebDriverUpAction::class);

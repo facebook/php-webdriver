@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
-use Facebook\WebDriver\Support\Events\EventFiringWebDriver;
+use PhpWebDriver\WebDriver\Support\Events\EventFiringWebDriver;
 
 class WebDriverDispatcher
 {
@@ -76,3 +76,5 @@ class WebDriverDispatcher
         return $this;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverDispatcher::class, \Facebook\WebDriver\WebDriverDispatcher::class);

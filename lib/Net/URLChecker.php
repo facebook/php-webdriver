@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver\Net;
+namespace PhpWebDriver\WebDriver\Net;
 
 use Exception;
-use Facebook\WebDriver\Exception\TimeoutException;
+use PhpWebDriver\WebDriver\Exception\TimeoutException;
 
 class URLChecker
 {
@@ -70,3 +70,5 @@ class URLChecker
         return $code;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Net\URLChecker::class, \Facebook\WebDriver\Net\URLChecker::class);

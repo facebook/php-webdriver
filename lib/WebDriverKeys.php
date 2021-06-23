@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * Representations of pressable keys that aren't text.
@@ -130,3 +130,5 @@ class WebDriverKeys
         return implode('', $encoded);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverKeys::class, \Facebook\WebDriver\WebDriverKeys::class);

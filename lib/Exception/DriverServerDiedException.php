@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 /**
  * The driver server process is unexpectedly no longer available.
@@ -13,3 +13,5 @@ class DriverServerDiedException extends WebDriverException
         \Exception::__construct($this->getMessage(), $this->getCode(), $previous);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\DriverServerDiedException::class, \Facebook\WebDriver\Exception\DriverServerDiedException::class);

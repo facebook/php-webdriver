@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * An abstraction allowing the driver to access the browser's history and to
@@ -41,3 +41,5 @@ interface WebDriverNavigationInterface
      */
     public function to($url);
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverNavigationInterface::class, \Facebook\WebDriver\WebDriverNavigationInterface::class);

@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
-use Facebook\WebDriver\Exception\WebDriverException;
+use PhpWebDriver\WebDriver\Exception\WebDriverException;
 
 class CustomWebDriverCommand extends WebDriverCommand
 {
@@ -80,3 +80,5 @@ class CustomWebDriverCommand extends WebDriverCommand
         $this->customUrl = $custom_url;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\CustomWebDriverCommand::class, \Facebook\WebDriver\Remote\CustomWebDriverCommand::class);

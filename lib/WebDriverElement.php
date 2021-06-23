@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * Interface for an HTML element in the WebDriver framework.
@@ -129,3 +129,5 @@ interface WebDriverElement extends WebDriverSearchContext
      */
     //public function takeElementScreenshot($save_as = null);
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverElement::class, \Facebook\WebDriver\WebDriverElement::class);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 /**
  * The Element Click command could not be completed because the element receiving the events is obscuring the element
@@ -9,3 +9,5 @@ namespace Facebook\WebDriver\Exception;
 class ElementClickInterceptedException extends WebDriverException
 {
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\ElementClickInterceptedException::class, \Facebook\WebDriver\Exception\ElementClickInterceptedException::class);

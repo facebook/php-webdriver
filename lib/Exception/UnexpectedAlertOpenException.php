@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 /**
  * A modal dialog was open, blocking this operation.
@@ -8,3 +8,5 @@ namespace Facebook\WebDriver\Exception;
 class UnexpectedAlertOpenException extends WebDriverException
 {
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\UnexpectedAlertOpenException::class, \Facebook\WebDriver\Exception\UnexpectedAlertOpenException::class);

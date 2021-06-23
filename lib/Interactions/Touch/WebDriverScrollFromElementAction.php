@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Touch;
+namespace PhpWebDriver\WebDriver\Interactions\Touch;
 
-use Facebook\WebDriver\WebDriverAction;
-use Facebook\WebDriver\WebDriverElement;
+use PhpWebDriver\WebDriver\WebDriverAction;
+use PhpWebDriver\WebDriver\WebDriverElement;
 
 class WebDriverScrollFromElementAction extends WebDriverTouchAction implements WebDriverAction
 {
@@ -36,3 +36,5 @@ class WebDriverScrollFromElementAction extends WebDriverTouchAction implements W
         );
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Touch\WebDriverScrollFromElementAction::class, \Facebook\WebDriver\Interactions\Touch\WebDriverScrollFromElementAction::class);

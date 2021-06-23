@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 /**
  * An error occurred while executing JavaScript supplied by the user.
@@ -8,3 +8,5 @@ namespace Facebook\WebDriver\Exception;
 class JavascriptErrorException extends WebDriverException
 {
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\JavascriptErrorException::class, \Facebook\WebDriver\Exception\JavascriptErrorException::class);

@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Touch;
+namespace PhpWebDriver\WebDriver\Interactions\Touch;
 
-use Facebook\WebDriver\WebDriverAction;
+use PhpWebDriver\WebDriver\WebDriverAction;
 
 class WebDriverFlickAction extends WebDriverTouchAction implements WebDriverAction
 {
@@ -32,3 +32,5 @@ class WebDriverFlickAction extends WebDriverTouchAction implements WebDriverActi
         $this->touchScreen->flick($this->x, $this->y);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Touch\WebDriverFlickAction::class, \Facebook\WebDriver\Interactions\Touch\WebDriverFlickAction::class);

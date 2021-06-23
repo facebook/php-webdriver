@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
-use Facebook\WebDriver\WebDriverBy;
+use PhpWebDriver\WebDriver\WebDriverBy;
 
 /**
  * Compatibility layer between W3C's WebDriver and the legacy JsonWire protocol.
@@ -87,3 +87,5 @@ abstract class JsonWireCompat
         }, $selector);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\JsonWireCompat::class, \Facebook\WebDriver\Remote\JsonWireCompat::class);

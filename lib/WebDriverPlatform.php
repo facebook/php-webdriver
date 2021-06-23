@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * The platforms supported by WebDriver.
@@ -23,3 +23,5 @@ class WebDriverPlatform
     {
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverPlatform::class, \Facebook\WebDriver\WebDriverPlatform::class);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 class UselessFileDetector implements FileDetector
 {
@@ -9,3 +9,5 @@ class UselessFileDetector implements FileDetector
         return null;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\UselessFileDetector::class, \Facebook\WebDriver\Remote\UselessFileDetector::class);

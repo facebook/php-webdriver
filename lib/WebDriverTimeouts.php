@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
-use Facebook\WebDriver\Remote\DriverCommand;
-use Facebook\WebDriver\Remote\ExecuteMethod;
+use PhpWebDriver\WebDriver\Remote\DriverCommand;
+use PhpWebDriver\WebDriver\Remote\ExecuteMethod;
 
 /**
  * Managing timeout behavior for WebDriver instances.
@@ -100,3 +100,5 @@ class WebDriverTimeouts
         return $this;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverTimeouts::class, \Facebook\WebDriver\WebDriverTimeouts::class);

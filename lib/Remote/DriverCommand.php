@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 /**
  * This list of command defined in the WebDriver json wire protocol.
@@ -148,3 +148,5 @@ class DriverCommand
     {
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\DriverCommand::class, \Facebook\WebDriver\Remote\DriverCommand::class);

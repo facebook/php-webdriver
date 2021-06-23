@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * The interface for WebDriver and WebDriverElement which is able to search for
@@ -29,3 +29,5 @@ interface WebDriverSearchContext
      */
     public function findElements(WebDriverBy $locator);
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverSearchContext::class, \Facebook\WebDriver\WebDriverSearchContext::class);

@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Chrome;
+namespace PhpWebDriver\WebDriver\Chrome;
 
-use Facebook\WebDriver\Remote\DesiredCapabilities;
+use PhpWebDriver\WebDriver\Remote\DesiredCapabilities;
 use JsonSerializable;
 
 /**
@@ -178,3 +178,5 @@ class ChromeOptions implements JsonSerializable
         return $this;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Chrome\ChromeOptions::class, \Facebook\WebDriver\Chrome\ChromeOptions::class);

@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Internal;
+namespace PhpWebDriver\WebDriver\Interactions\Internal;
 
-use Facebook\WebDriver\WebDriverAction;
+use PhpWebDriver\WebDriver\WebDriverAction;
 
 /**
  * Move to the location and then release the mouse key.
@@ -14,3 +14,5 @@ class WebDriverButtonReleaseAction extends WebDriverMouseAction implements WebDr
         $this->mouse->mouseUp($this->getActionLocation());
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Internal\WebDriverButtonReleaseAction::class, \Facebook\WebDriver\Interactions\Internal\WebDriverButtonReleaseAction::class);

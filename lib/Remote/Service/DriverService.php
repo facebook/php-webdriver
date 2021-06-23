@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver\Remote\Service;
+namespace PhpWebDriver\WebDriver\Remote\Service;
 
 use Exception;
-use Facebook\WebDriver\Net\URLChecker;
+use PhpWebDriver\WebDriver\Net\URLChecker;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\ProcessBuilder;
 
@@ -207,3 +207,5 @@ class DriverService
         return false;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\Service\DriverService::class, \Facebook\WebDriver\Remote\Service\DriverService::class);

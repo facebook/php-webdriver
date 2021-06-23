@@ -1,9 +1,9 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
-use Facebook\WebDriver\Interactions\Touch\WebDriverTouchScreen;
-use Facebook\WebDriver\WebDriverElement;
+use PhpWebDriver\WebDriver\Interactions\Touch\WebDriverTouchScreen;
+use PhpWebDriver\WebDriver\WebDriverElement;
 
 /**
  * Execute touch commands for RemoteWebDriver.
@@ -186,3 +186,5 @@ class RemoteTouchScreen implements WebDriverTouchScreen
         return $this;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\RemoteTouchScreen::class, \Facebook\WebDriver\Remote\RemoteTouchScreen::class);

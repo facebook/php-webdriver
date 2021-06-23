@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
-use Facebook\WebDriver\Interactions\Touch\WebDriverTouchScreen;
+use PhpWebDriver\WebDriver\Interactions\Touch\WebDriverTouchScreen;
 
 /**
  * The interface for WebDriver.
@@ -141,3 +141,5 @@ interface WebDriver extends WebDriverSearchContext
     // */
     //public function executeCustomCommand($endpointUrl, $method = 'GET', $params = []);
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriver::class, \Facebook\WebDriver\WebDriver::class);

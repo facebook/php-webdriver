@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 /**
  * The target for mouse interaction is not in the browser’s viewport and cannot be brought into that viewport.
@@ -8,3 +8,5 @@ namespace Facebook\WebDriver\Exception;
 class MoveTargetOutOfBoundsException extends WebDriverException
 {
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\MoveTargetOutOfBoundsException::class, \Facebook\WebDriver\Exception\MoveTargetOutOfBoundsException::class);

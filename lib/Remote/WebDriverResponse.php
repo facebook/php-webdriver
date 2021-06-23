@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 class WebDriverResponse
 {
@@ -82,3 +82,5 @@ class WebDriverResponse
         return $this;
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\WebDriverResponse::class, \Facebook\WebDriver\Remote\WebDriverResponse::class);

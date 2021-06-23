@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 /**
  * All the browsers supported by selenium.
@@ -38,3 +38,5 @@ class WebDriverBrowserType
     {
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\WebDriverBrowserType::class, \Facebook\WebDriver\Remote\WebDriverBrowserType::class);

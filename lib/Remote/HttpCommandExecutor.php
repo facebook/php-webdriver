@@ -1,11 +1,11 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 use BadMethodCallException;
-use Facebook\WebDriver\Exception\WebDriverCurlException;
-use Facebook\WebDriver\Exception\WebDriverException;
-use Facebook\WebDriver\WebDriverCommandExecutor;
+use PhpWebDriver\WebDriver\Exception\WebDriverCurlException;
+use PhpWebDriver\WebDriver\Exception\WebDriverException;
+use PhpWebDriver\WebDriver\WebDriverCommandExecutor;
 use InvalidArgumentException;
 
 /**
@@ -289,7 +289,7 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
 
         curl_setopt($this->curl, CURLOPT_URL, $this->url . $url);
 
-        // https://github.com/facebook/php-webdriver/issues/173
+        // https://github.com/php-webdriver/php-webdriver/issues/173
         if ($command->getName() === DriverCommand::NEW_SESSION) {
             curl_setopt($this->curl, CURLOPT_POST, 1);
         } else {
@@ -424,3 +424,5 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
         ];
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\HttpCommandExecutor::class, \Facebook\WebDriver\Remote\HttpCommandExecutor::class);

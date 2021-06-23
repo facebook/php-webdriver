@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Firefox;
+namespace PhpWebDriver\WebDriver\Firefox;
 
 /**
  * Class to manage Firefox-specific capabilities
@@ -106,3 +106,5 @@ class FirefoxOptions implements \JsonSerializable
         return new \ArrayObject($this->toArray());
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Firefox\FirefoxOptions::class, \Facebook\WebDriver\Firefox\FirefoxOptions::class);

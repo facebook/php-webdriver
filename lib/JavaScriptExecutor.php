@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * WebDriver interface implemented by drivers that support JavaScript.
@@ -33,3 +33,5 @@ interface JavaScriptExecutor
      */
     public function executeAsyncScript($script, array $arguments = []);
 }
+
+class_alias(\PhpWebDriver\WebDriver\JavaScriptExecutor::class, \Facebook\WebDriver\JavaScriptExecutor::class);

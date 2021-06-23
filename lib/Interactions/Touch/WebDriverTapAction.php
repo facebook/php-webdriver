@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Touch;
+namespace PhpWebDriver\WebDriver\Interactions\Touch;
 
-use Facebook\WebDriver\WebDriverAction;
+use PhpWebDriver\WebDriver\WebDriverAction;
 
 class WebDriverTapAction extends WebDriverTouchAction implements WebDriverAction
 {
@@ -11,3 +11,5 @@ class WebDriverTapAction extends WebDriverTouchAction implements WebDriverAction
         $this->touchScreen->tap($this->locationProvider);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Touch\WebDriverTapAction::class, \Facebook\WebDriver\Interactions\Touch\WebDriverTapAction::class);

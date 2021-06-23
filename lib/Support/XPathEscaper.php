@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Support;
+namespace PhpWebDriver\WebDriver\Support;
 
 class XPathEscaper
 {
@@ -30,3 +30,5 @@ class XPathEscaper
         );
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Support\XPathEscaper::class, \Facebook\WebDriver\Support\XPathEscaper::class);

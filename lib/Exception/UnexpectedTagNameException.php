@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 class UnexpectedTagNameException extends WebDriverException
 {
@@ -21,3 +21,5 @@ class UnexpectedTagNameException extends WebDriverException
         );
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\UnexpectedTagNameException::class, \Facebook\WebDriver\Exception\UnexpectedTagNameException::class);

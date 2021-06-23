@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Remote;
+namespace PhpWebDriver\WebDriver\Remote;
 
 class RemoteExecuteMethod implements ExecuteMethod
 {
@@ -27,3 +27,5 @@ class RemoteExecuteMethod implements ExecuteMethod
         return $this->driver->execute($command_name, $parameters);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Remote\RemoteExecuteMethod::class, \Facebook\WebDriver\Remote\RemoteExecuteMethod::class);

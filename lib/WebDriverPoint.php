@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver;
+namespace PhpWebDriver\WebDriver;
 
 /**
  * Represent a point.
@@ -78,3 +78,5 @@ class WebDriverPoint
         $this->y === $point->getY();
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\WebDriverPoint::class, \Facebook\WebDriver\WebDriverPoint::class);

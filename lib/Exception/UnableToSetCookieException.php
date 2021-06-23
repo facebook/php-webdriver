@@ -1,6 +1,6 @@
 <?php
 
-namespace Facebook\WebDriver\Exception;
+namespace PhpWebDriver\WebDriver\Exception;
 
 /**
  * A command to set a cookie’s value could not be satisfied.
@@ -8,3 +8,5 @@ namespace Facebook\WebDriver\Exception;
 class UnableToSetCookieException extends WebDriverException
 {
 }
+
+class_alias(\PhpWebDriver\WebDriver\Exception\UnableToSetCookieException::class, \Facebook\WebDriver\Exception\UnableToSetCookieException::class);

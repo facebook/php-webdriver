@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Internal;
+namespace PhpWebDriver\WebDriver\Interactions\Internal;
 
-use Facebook\WebDriver\WebDriverAction;
+use PhpWebDriver\WebDriver\WebDriverAction;
 
 class WebDriverDoubleClickAction extends WebDriverMouseAction implements WebDriverAction
 {
@@ -11,3 +11,5 @@ class WebDriverDoubleClickAction extends WebDriverMouseAction implements WebDriv
         $this->mouse->doubleClick($this->getActionLocation());
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Internal\WebDriverDoubleClickAction::class, \Facebook\WebDriver\Interactions\Internal\WebDriverDoubleClickAction::class);

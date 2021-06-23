@@ -1,8 +1,8 @@
 <?php
 
-namespace Facebook\WebDriver\Interactions\Touch;
+namespace PhpWebDriver\WebDriver\Interactions\Touch;
 
-use Facebook\WebDriver\WebDriverAction;
+use PhpWebDriver\WebDriver\WebDriverAction;
 
 class WebDriverScrollAction extends WebDriverTouchAction implements WebDriverAction
 {
@@ -26,3 +26,5 @@ class WebDriverScrollAction extends WebDriverTouchAction implements WebDriverAct
         $this->touchScreen->scroll($this->x, $this->y);
     }
 }
+
+class_alias(\PhpWebDriver\WebDriver\Interactions\Touch\WebDriverScrollAction::class, \Facebook\WebDriver\Interactions\Touch\WebDriverScrollAction::class);
