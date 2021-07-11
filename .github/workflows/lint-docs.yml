@@ -1,0 +1,23 @@
+name: Lint php documentation
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+    lint-docs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+            - name: Lint php documentation
+              uses: sudo-bot/action-doctum@v5
+              with:
+                  config-file: scripts/doctum.php
+                  method: "parse"
+                  cli-args: "--output-format=github --no-ansi --no-progress -v --ignore-parse-errors"
